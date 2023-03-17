@@ -1,0 +1,16 @@
+*{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    text-align:center;
+}
+body > div{
+    margin: auto;
+    margin-top: 50px;
+    width: fit-content;
+    padding: 30px;
+    background-color: rgb(43, 39, 33);
+    border-radius: 20px;
+    color: aliceblue;
+}
