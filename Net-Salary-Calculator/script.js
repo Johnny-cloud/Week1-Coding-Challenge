@@ -1,12 +1,15 @@
 let paye = 0;
 let NHIFDeductions = 0;
-let NSSFDeductions = 0;
+let NSSFDeductions = 1080;
 let grossSalary = 0;
+let grossSalaryAfterNSSF = 0;
 let netSalary = 0;
 let taxablePay = 0;
 
 //get user input
 grossSalary = parseInt(prompt("Enter the gross salary : "));
+
+grossSalaryAfterNSSF = grossSalary -NSSFDeductions;
 
 if(grossSalary){ //Ensures no empty value is calculated
 
@@ -19,17 +22,17 @@ if(grossSalary){ //Ensures no empty value is calculated
 
 }
 
-function calculatePAYEperMonth(grossSalary){
+function calculatePAYEperMonth(grossSalaryAfterNSSF){
 
-    if(grossSalary <= 24000){
+    if(grossSalaryAfterNSSF <= 24000){
         taxablePay = 24000;
         paye = taxablePay * 0.1;
 
-    }else if(grossSalary <= 32333){
+    }else if(grossSalaryAfterNSSF <= 32333){
         taxablePay = 8333.33;
         paye = taxablePay * 0.25;
 
-    }else if(grossSalary > 32333){
+    }else if(grossSalaryAfterNSSF > 32333){
         taxablePay = 16586.67;
         paye = taxablePay * 0.30;
 
@@ -115,7 +118,7 @@ function calculateNSSFdeductionsOldRates(grossSalary) {
 
 function calculateNetSalary() {
 
-    netSalary = grossSalary - paye - NHIFDeductions -NSSFDeductions;
+    netSalary = grossSalaryAfterNSSF - paye - NHIFDeductions ;
 
     return netSalary;
 }
@@ -123,13 +126,16 @@ function calculateNetSalary() {
 let textGrossSalary = document.querySelector('#gross-salary');
 textGrossSalary.textContent = grossSalary;
 
+let textGrossAfterNSSF = document.querySelector('#gross-after-nssf');
+textGrossAfterNSSF.textContent = grossSalaryAfterNSSF;
+
 let textPaye = document.querySelector('#paye');
 textPaye.textContent = paye;
 
 let textNHIFdeductions = document.querySelector('#nhif-deductions');
 textNHIFdeductions.textContent = NHIFDeductions;
 
-let textNSSFdeductions = document.querySelector('#nssf-deductions');
+let textNSSFdeductions = document.querySelector('#nssf');
 textNSSFdeductions.textContent = NSSFDeductions;
 
 let textNetSalary = document.querySelector('#net-salary');
