@@ -14,7 +14,6 @@ grossSalaryAfterNSSF = grossSalary -NSSFDeductions;
 if(grossSalary){ //Ensures no empty value is calculated
 
     calculateNHIFdeductions(grossSalary);
-    calculateNSSFdeductionsOldRates(grossSalary);
     calculatePAYEperMonth(grossSalary);
 
     //calculate the net salary after all other deductions.
@@ -101,20 +100,8 @@ function calculateNHIFdeductions(grossSalary){
 }
 
 
-function calculateNSSFdeductionsNewRates(pensionablePay) {
 
-   NSSFDeductions = Math.floor (0.6 * pensionablePay) ; //Remove decimal points
 
-   return NSSFDeductions;
-    
-}
-
-function calculateNSSFdeductionsOldRates(grossSalary) {
-    
-    NSSFDeductions = Math.floor(0.05 * grossSalary);
-
-    return NSSFDeductions;
-}
 
 function calculateNetSalary() {
 
