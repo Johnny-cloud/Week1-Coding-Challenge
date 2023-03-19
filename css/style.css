@@ -1,16 +1,76 @@
 *{
-    font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
+    width: 100%;
+    left: 0;
     text-align:center;
 }
 body > div{
+
+    font-size: 30px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 150px;
     width: fit-content;
     padding: 30px;
-    background-color: rgb(43, 39, 33);
+    background-color: rgb(23, 79, 45);
     border-radius: 20px;
     color: aliceblue;
+}
+
+body > header{
+    position: fixed;
+    top: 0;
+    width:100%;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color:lightgray;
+    color: green;
+    font-size: 20px;
+    font-family:monospace;
+}
+
+body > header > nav > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  
+}
+
+nav > ul > li{
+    list-style: none;
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+}
+header a{
+    text-decoration: none;
+    color: green;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+a{
+    text-decoration: none;
+    color: aquamarine;
+}
+.nav-links{
+    background-color: darkgreen;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    margin-top: 250px;
+    border-radius: 20px;
+}
+.nav-links a{
+    padding: 50px;
+}
+.nav-links a:hover{
+    background-color: black;
+    border-radius: 30px;
+    padding: 10px;
 }

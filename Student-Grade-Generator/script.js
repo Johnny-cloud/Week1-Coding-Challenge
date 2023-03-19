@@ -19,5 +19,5 @@ if(studentMarks > 79){
 }else if(studentMarks < 40){
     grade.textContent = "E"
 }else{
-    grade.textContent = "Invalid input";
+    grade.textContent = "-";
 }
