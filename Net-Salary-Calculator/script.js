@@ -7,7 +7,7 @@ let netSalary = 0;
 let taxablePay = 0;
 
 //get user input
-grossSalary = parseInt(prompt("Enter the gross salary : "));
+grossSalary = parseInt(prompt("Enter the monthly gross salary : "));
 
 grossSalaryAfterNSSF = grossSalary -NSSFDeductions;
 

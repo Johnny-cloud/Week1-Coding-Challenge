@@ -28,7 +28,7 @@ if(demeritPoint <= 0){
 }else if(demeritPoint > 12){
 
     let speedContainer = document.querySelector('#speed-container');
-    speedContainer.style.backgroundColor = "red";
+    speedContainer.style.backgroundColor = "#E10600";
     textTotalPoints.textContent = "License suspended!"
     console.log("Licence suspended!");
    
