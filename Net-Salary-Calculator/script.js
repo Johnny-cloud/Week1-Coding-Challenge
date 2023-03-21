@@ -8,20 +8,35 @@ let taxablePay = 0;
 let benefits = 0;
 
 //get user input
-grossSalary = parseInt(prompt("Enter the monthly gross salary : "));
-benefits = parseInt(prompt("Enter additional benefits"));
+// grossSalary = parseInt(prompt("Enter the monthly gross salary : "));
+//benefits = parseInt(prompt("Enter additional benefits"));
 
-grossSalaryAfterNSSF = grossSalary -NSSFDeductions;
+let grossSalaryInput = document.querySelector('#input-gross-salary');
+let benefitsInput = document.querySelector('#input-benefits');
 
-if(grossSalary){ //Ensures no empty value is calculated
+function getFormValues() {
+    grossSalary = grossSalaryInput.value;
+    benefits = benefitsInput.value;
+}
 
+let form = document.querySelector('#salary-form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    getFormValues();
+
+    grossSalaryAfterNSSF = grossSalary - NSSFDeductions;
+ 
     calculateNHIFdeductions(grossSalary);
-    calculatePAYEperMonth(grossSalary);
+    calculatePAYEperMonth(grossSalaryAfterNSSF);
 
     //calculate the net salary after all other deductions.
     calculateNetSalary();
+    displayResults();
+})
 
-}
+
 
 function calculatePAYEperMonth(grossSalaryAfterNSSF){
 
@@ -113,23 +128,25 @@ function calculateNetSalary() {
 }
 
 //add results on the html index page
-let textGrossSalary = document.querySelector('#gross-salary');
-textGrossSalary.textContent = grossSalary;
+function displayResults() {
+    let textGrossSalary = document.querySelector('#gross-salary');
+    textGrossSalary.textContent = grossSalary;
 
-let textGrossAfterNSSF = document.querySelector('#gross-after-nssf');
-textGrossAfterNSSF.textContent = grossSalaryAfterNSSF;
+    let textGrossAfterNSSF = document.querySelector('#gross-after-nssf');
+    textGrossAfterNSSF.textContent = grossSalaryAfterNSSF;
 
-let textBenefits = document.querySelector('#benefits');
-textBenefits.textContent = benefits;
+    let textBenefits = document.querySelector('#benefits');
+    textBenefits.textContent = benefits;
 
-let textPaye = document.querySelector('#paye');
-textPaye.textContent = paye;
+    let textPaye = document.querySelector('#paye');
+    textPaye.textContent = paye;
 
-let textNHIFdeductions = document.querySelector('#nhif-deductions');
-textNHIFdeductions.textContent = NHIFDeductions;
+    let textNHIFdeductions = document.querySelector('#nhif-deductions');
+    textNHIFdeductions.textContent = NHIFDeductions;
 
-let textNSSFdeductions = document.querySelector('#nssf');
-textNSSFdeductions.textContent = NSSFDeductions;
+    let textNSSFdeductions = document.querySelector('#nssf');
+    textNSSFdeductions.textContent = NSSFDeductions;
 
-let textNetSalary = document.querySelector('#net-salary');
-textNetSalary.textContent = netSalary;
+    let textNetSalary = document.querySelector('#net-salary');
+    textNetSalary.textContent = netSalary;
+}

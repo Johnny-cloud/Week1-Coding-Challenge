@@ -11,7 +11,7 @@ body > div{
     font-size: 30px;
     margin: auto;
     margin-top: 150px;
-    width: fit-content;
+    width: 50%;
     padding: 30px;
     background-color: rgb(23, 79, 45);
     border-radius: 20px;
@@ -73,4 +73,17 @@ a{
     background-color: black;
     border-radius: 30px;
     padding: 10px;
+}
+form{
+    margin: auto;
+    width: 30%;
+}
+
+form > *{
+    margin: 20px;
+    font-size: 25px;
+}
+input[type="submit"]{
+    font-size: 25px;
+    border-radius: 20px;
 }
