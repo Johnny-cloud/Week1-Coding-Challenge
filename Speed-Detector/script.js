@@ -33,18 +33,21 @@ form.addEventListener('submit', (e) => {
 
 //check the demerit point and update the text in the html page
 function checkDemeritPoint() {
+    let speedContainer = document.querySelector('#speed-container');
+
     if(demeritPoint <= 0){
 
         textTotalPoints.textContent = "Okay";
-        console.log("Okay!");
+        speedContainer.style.backgroundColor =  'rgb(23, 79, 45)';
+
     
     }else if(demeritPoint > 0 && demeritPoint < 13){
     
         textTotalPoints.textContent = demeritPoint;
+        speedContainer.style.backgroundColor =  'rgb(23, 79, 45)';
     
     }else if(demeritPoint > 12){
-    
-        let speedContainer = document.querySelector('#speed-container');
+       
         speedContainer.style.backgroundColor = "#E10600";
         textTotalPoints.textContent = "License suspended!"
         console.log("Licence suspended!");
