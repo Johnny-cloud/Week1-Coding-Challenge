@@ -5,9 +5,11 @@ let grossSalary = 0;
 let grossSalaryAfterNSSF = 0;
 let netSalary = 0;
 let taxablePay = 0;
+let benefits = 0;
 
 //get user input
 grossSalary = parseInt(prompt("Enter the monthly gross salary : "));
+benefits = parseInt(prompt("Enter additional benefits"));
 
 grossSalaryAfterNSSF = grossSalary -NSSFDeductions;
 
@@ -115,6 +117,9 @@ textGrossSalary.textContent = grossSalary;
 
 let textGrossAfterNSSF = document.querySelector('#gross-after-nssf');
 textGrossAfterNSSF.textContent = grossSalaryAfterNSSF;
+
+let textBenefits = document.querySelector('#benefits');
+textBenefits.textContent = benefits;
 
 let textPaye = document.querySelector('#paye');
 textPaye.textContent = paye;
