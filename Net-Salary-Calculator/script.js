@@ -112,6 +112,7 @@ function calculateNetSalary() {
     return netSalary;
 }
 
+//add results on the html index page
 let textGrossSalary = document.querySelector('#gross-salary');
 textGrossSalary.textContent = grossSalary;
 
